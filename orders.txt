@@ -1,0 +1,20 @@
+ejlee
+T-03 2 m
+T-05 2 m
+T-04 1 m
+B-01 1 m
+B-04 1 m
+0
+kim
+T-01 2 l
+T-03 1 l
+B-01 1 l
+T-04 1 l
+B-04 1 l
+T-05 1 l
+0
+admin
+T-03 3 l
+T-05 2 l
+B-04 5 l
+0
