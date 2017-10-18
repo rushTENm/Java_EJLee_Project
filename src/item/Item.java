@@ -1,4 +1,4 @@
-﻿package item;
+package item;
 
 import java.util.Scanner;
 
@@ -29,7 +29,6 @@ public class Item {
         price = sc.nextInt();
         mf = sc.next();
         sizeOption = sc.next();
-        index = count++;
     }
 
     // T-01 3 후드티_ST1 5000 f s/m/l

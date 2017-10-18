@@ -1,9 +1,12 @@
 package EJLee;
 
+import order.CartBasic;
+
 public class Main {
 
     public static void main(String[] args) {
 	// write your code here
-        System.out.println("HW!");
+        CartBasic cartBasic = new CartBasic();
+        cartBasic.run();
     }
 }

@@ -1,18 +1,17 @@
-﻿package order;
+package order;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.Scanner;
 
-import item.ItemType;
 import item.Item;
+import item.ItemDiscount;
 
 public class CartBasic {
     public static void main(String[] args) {
         CartBasic cart = new CartBasic();
-        cart.doit();
+        cart.run();
     }
 
     Scanner keyin = new Scanner(System.in);
@@ -31,9 +30,15 @@ public class CartBasic {
 
     ;
 
-    void doit() {
+    public void run() {
         readAllItems();
+        printAllItems();
+
         readAllOrders();
+        printAnOrder("ejlee");
+        printAnOrder("kim");
+        printAnOrder("admin");
+
         menu();
     }
 
@@ -84,17 +89,17 @@ public class CartBasic {
     }
 
     void readAllItems() {
-        Scanner fileIn = openFile("items.txt");
+        Scanner fileIn = openFile("items-i-step3.txt");
         Item it = null;
         fileIn.nextLine();
-        int type = 1;
+        int type = 0;
         while (fileIn.hasNext()) {
-            //type = fileIn.nextInt();  // 상속에서 추가되어야 하는 부분
-            if (type == 1) it = new Item();
-            // ...
+            type = fileIn.nextInt();  // 상속에서 추가되어야 하는 부분
+            if (type == 1)
+                it = new Item();
+            else if (type == 2)
+                it = new ItemDiscount();
             it.read(fileIn);
-            it.print();
-            System.out.println();
             itemList.add(it);
         }
         fileIn.close();

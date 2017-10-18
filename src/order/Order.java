@@ -1,4 +1,4 @@
-﻿package order;
+package order;
 
 import java.util.Scanner;
 
@@ -32,10 +32,11 @@ public class Order {
         // 주문 출력에 들어갈 상품 기본 정보
         System.out.printf("%-6s ", userId);
         item.printOrder(this);
-        System.out.printf(" [%d개] size:%s 소계:%5d원 ", cc, sz, getTotal());
         // 할인 정보 및 할인액 출력 (Item에서는 출력하는 것 없음)
         // 아이템 타입에 따라 오버라이딩 메소드 호출
         item.printOrderDiscount(this);
+
+        System.out.printf(" [%d개] size:%s 소계:%5d원 ", cc, sz, getTotal());
         System.out.println();
     }
 
