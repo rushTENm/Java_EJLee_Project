@@ -66,7 +66,7 @@ public class CartBasic {
         // 추가로 구현되어야 하는 부분 (메뉴에 따른 검색 기능)
     }
 
-    static boolean isMember(String user) {
+    public static boolean isMember(String user) {
         return members.contains(user);
     }
 
@@ -89,7 +89,7 @@ public class CartBasic {
     }
 
     void readAllItems() {
-        Scanner fileIn = openFile("items-i-step3.txt");
+        Scanner fileIn = openFile("items-i-step4.txt");
         Item it = null;
         fileIn.nextLine();
         int type = 0;
@@ -97,9 +97,11 @@ public class CartBasic {
             type = fileIn.nextInt();  // 상속에서 추가되어야 하는 부분
             if (type == 1)
                 it = new Item();
-            else if (type == 2)
+            else if (type == 2||type == 3)
                 it = new ItemDiscount();
             it.read(fileIn);
+            if (type == 3)
+                it.readBundle(fileIn);
             itemList.add(it);
         }
         fileIn.close();

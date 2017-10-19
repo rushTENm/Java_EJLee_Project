@@ -110,4 +110,7 @@ public class Item {
     public ItemType getCategory() {
         return category;
     }
+
+    public void readBundle(Scanner fileIn) {
+    }
 }
