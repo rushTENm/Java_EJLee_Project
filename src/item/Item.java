@@ -17,9 +17,7 @@ public class Item {
 
     public Item() {
     }
-
-    ;
-
+    
     public void read(Scanner sc) {
         index = count++;
         saleType = 1;
@@ -109,8 +107,5 @@ public class Item {
 
     public ItemType getCategory() {
         return category;
-    }
-
-    public void readBundle(Scanner fileIn) {
     }
 }

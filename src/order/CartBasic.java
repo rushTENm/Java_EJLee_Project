@@ -89,7 +89,7 @@ public class CartBasic {
     }
 
     void readAllItems() {
-        Scanner fileIn = openFile("items-i-step4.txt");
+        Scanner fileIn = openFile("items-i-step3.txt");
         Item it = null;
         fileIn.nextLine();
         int type = 0;
@@ -97,11 +97,9 @@ public class CartBasic {
             type = fileIn.nextInt();  // 상속에서 추가되어야 하는 부분
             if (type == 1)
                 it = new Item();
-            else if (type == 2||type == 3)
+            else if (type == 2)
                 it = new ItemDiscount();
             it.read(fileIn);
-            if (type == 3)
-                it.readBundle(fileIn);
             itemList.add(it);
         }
         fileIn.close();
