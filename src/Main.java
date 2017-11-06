@@ -1,33 +1,61 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
 public class Main {
     public static void main(String[] args) {
-        new NullContainerEx();
+        new MouseListenerEx();
     }
 }
 
-class NullContainerEx extends JFrame{
-    public NullContainerEx() {
-        setTitle("Null Container Sample");
+class MouseListenerEx extends JFrame {
+    private  JLabel la = new JLabel("Hello");
+
+    public MouseListenerEx() {
+        setTitle("Mouse");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         Container c = getContentPane();
+        c.addMouseListener(new MyMouseListener());
         c.setLayout(null);
 
-        JLabel la = new JLabel("Hello, Press Button");
-        la.setLocation(130,50);
-        la.setSize(200,20);
+        la.setSize(50,20);
+        la.setLocation(30,30);
         c.add(la);
 
-        for (int i = 0; i < 10; i++) {
-            JButton b =new JButton(Integer.toString(i));
-            b.setLocation(i*15,i*15);
-            b.setSize(50,20);
-            c.add(b);
-        }
-
-        setSize(300,200);
+        setSize(250,250);
         setVisible(true);
     }
+
+    class MyMouseListener implements MouseListener {
+
+        @Override
+        public void mouseClicked(MouseEvent e) {
+
+        }
+
+        @Override
+        public void mousePressed(MouseEvent e) {
+            int x = e.getX();
+            int y = e.getY();
+            la.setLocation(x,y);
+        }
+
+        @Override
+        public void mouseReleased(MouseEvent e) {
+
+        }
+
+        @Override
+        public void mouseEntered(MouseEvent e) {
+
+        }
+
+        @Override
+        public void mouseExited(MouseEvent e) {
+
+        }
+    }
 }
+
