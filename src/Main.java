@@ -1,60 +1,33 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 
 public class Main {
     public static void main(String[] args) {
-        new MouseListenerEx();
+        new ClickAndDoubleClickEx();
     }
 }
 
-class MouseListenerEx extends JFrame {
-    private  JLabel la = new JLabel("Hello");
-
-    public MouseListenerEx() {
-        setTitle("Mouse");
+class ClickAndDoubleClickEx extends JFrame {
+    public ClickAndDoubleClickEx() {
+        setTitle("Click & DoubleClick");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        Container c = getContentPane();
-        c.addMouseListener(new MyMouseListener());
-        c.setLayout(null);
+        Container container = getContentPane();
+        container.addMouseListener(new MyMouseListener());
 
-        la.setSize(50,20);
-        la.setLocation(30,30);
-        c.add(la);
-
-        setSize(250,250);
+        setSize(300,200);
         setVisible(true);
     }
 
-    class MyMouseListener implements MouseListener {
-
+    class MyMouseListener extends MouseAdapter {
         @Override
         public void mouseClicked(MouseEvent e) {
-
-        }
-
-        @Override
-        public void mousePressed(MouseEvent e) {
-            int x = e.getX();
-            int y = e.getY();
-            la.setLocation(x,y);
-        }
-
-        @Override
-        public void mouseReleased(MouseEvent e) {
-
-        }
-
-        @Override
-        public void mouseEntered(MouseEvent e) {
-
-        }
-
-        @Override
-        public void mouseExited(MouseEvent e) {
-
+            if (e.getClickCount() == 2) {
+                Component component = (Component)e.getSource();
+                component.setBackground(new Color((int)(Math.random()*256),(int)(Math.random()*256),(int)(Math.random()*256)));
+            }
         }
     }
 }
