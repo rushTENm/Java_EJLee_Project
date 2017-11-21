@@ -19,7 +19,7 @@ public class MainFrame extends JFrame {
 		
 		getContentPane().add("One", new P_One(this));
 		getContentPane().add("Two", new OrderView(this));
-		getContentPane().add("Three", new PaymentView(this)); 
+		
 		
 		setVisible(true);
 	}
