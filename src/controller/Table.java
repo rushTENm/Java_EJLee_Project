@@ -26,7 +26,7 @@ public class Table {
         String[] inputs = input.split(" ");
         for (String menuStr: inputs ) {
             orderedMenu.add(MenuEnum.valueOf(menuStr));
-            total += MenuEnum.valueOf(menuStr).getprice();
+            total += MenuEnum.valueOf(menuStr).getPrice();
         }
 
         printOrdered();

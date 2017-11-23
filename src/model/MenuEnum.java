@@ -55,7 +55,7 @@ public enum MenuEnum {
         return name;
     }
 
-    public int getprice() {
+    public int getPrice() {
         return price;
     }
 
