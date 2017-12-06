@@ -1,4 +1,4 @@
-
+package view;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
@@ -8,6 +8,7 @@ import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 import javax.swing.JTextArea;
 import javax.swing.border.EmptyBorder;
+import javax.swing.border.LineBorder;
 import javax.swing.JTextField;
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
@@ -34,10 +35,9 @@ public class PaymentView extends JPanel {
 	private int total;
 	private int temp = 0;
 	MainFrame F;
+	String n;
 	ArrayList<String> sList = new ArrayList<>();
 	ArrayList<Integer> tablePrice = new ArrayList<>();
-	String n;
-
 	static HashMap<String, Integer> menuMap = new HashMap<>();
 	private JTextField textField_1;
 	private JTextField textField_2;
@@ -54,6 +54,7 @@ public class PaymentView extends JPanel {
 
 		list = new JList();
 		list.setForeground(Color.BLACK);
+		list.setBorder(new LineBorder(new Color(0, 0, 0)));
 		list.setBounds(14, 12, 499, 280);
 		add(list);
 
@@ -63,7 +64,7 @@ public class PaymentView extends JPanel {
 		JLabel label = new JLabel("총 금액");
 		label.setBounds(14, 329, 62, 18);
 		add(label);
-
+		
 		textField_1 = new JTextField();
 		textField_1.setText(String.valueOf(total));
 		textField_1.setBounds(107, 326, 116, 24);
@@ -160,7 +161,7 @@ public class PaymentView extends JPanel {
 		JButton btnPayment = new JButton("결제");
 		btnPayment.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				F.changePanel();
+				F.getCardLayout().show(F.getContentPane(), "One");
 			}
 		});
 		btnPayment.setBounds(14, 494, 105, 46);

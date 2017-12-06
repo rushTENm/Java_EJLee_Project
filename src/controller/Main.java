@@ -1,8 +1,13 @@
 package controller;
 
+import view.MainFrame;
+import view.MainView;
+
 public class Main {
     public static void main(String[] args) {
-        PointOfSale pos = new PointOfSale();
-        pos.run();
+        MainView mainView = new MainView(new MainFrame());
+
+//        PointOfSale pos = new PointOfSale();
+//        pos.run();
     }
 }

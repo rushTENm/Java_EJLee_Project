@@ -7,6 +7,7 @@ public class PointOfSale {
     Scanner scanner = new Scanner(System.in);
 
     public void run() {
+
         while (true) {
             System.out.print("테이블 번호를 입력해주세요. : ");
             int selectedNumber = Integer.parseInt(scanner.next())-1;
