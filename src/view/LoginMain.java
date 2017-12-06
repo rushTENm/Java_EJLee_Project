@@ -1,4 +1,4 @@
-package view;
+package Login;
 
 import javax.swing.JFrame;
 
@@ -18,11 +18,5 @@ public class LoginMain
 	{
 		Login.dispose();
 		this.mainView = new MainView();
-	}
-	
-	public void showWeekReport()
-	{
-		mainView.dispose();
-		this.report = new WeekReport();
 	}
 }

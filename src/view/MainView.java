@@ -1,4 +1,4 @@
-package view;
+package Login;
 
 import javax.swing.*;
 import java.awt.*;
@@ -59,15 +59,6 @@ public class MainView extends JFrame
       reportButton.setSize(130, 50);
       contentPane.add(reportButton);
       
-      reportButton.addActionListener(new ActionListener()
-      {
-    	  @Override
-    	  public void actionPerformed(ActionEvent e)
-    	  {
-    		  isWeekReport();
-    	  }
-      });
-
       JButton Settle = new JButton("결제");
       Settle.setLocation(15, 142);
       Settle.setSize(130, 50);
@@ -110,23 +101,4 @@ public class MainView extends JFrame
    {
       new MainView();
    }
-   
-   public void isWeekReport()
-   {   
-	   ReportCheck = true;
-		if(isReport())
-		{
-			main.showFrameTest();
-		}
-   }
-   
-	public void setMain(LoginMain main)
-	{
-		this.main = main;
-	}
-	
-	public boolean isReport()
-	{
-		return ReportCheck;
-	}
 }
