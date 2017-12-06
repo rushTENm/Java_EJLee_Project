@@ -1,12 +1,12 @@
 package view;
 
 import javax.swing.JFrame;
-import view.MainView;
 
 public class LoginMain 
 {
 	LogIn Login;
-	TestFrm testFrm;
+	MainView mainView;
+	WeekReport report;
 	
 	public static void main(String[] args)
 	{
@@ -17,6 +17,12 @@ public class LoginMain
 	public void showFrameTest()
 	{
 		Login.dispose();
-		this.testFrm = new TestFrm();
+		this.mainView = new MainView();
+	}
+	
+	public void showWeekReport()
+	{
+		mainView.dispose();
+		this.report = new WeekReport();
 	}
 }

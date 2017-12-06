@@ -9,7 +9,7 @@ import java.awt.event.ActionListener;
 public class LogIn extends JFrame
 {
 	private LoginMain main;
-	private TestFrm testFrm;
+	private MainView View;
 	
 	private JTextField userText;
 	private JPasswordField passText;
