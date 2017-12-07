@@ -24,7 +24,6 @@ public class MainFrame extends JFrame {
         setResizable(false);
 
         getContentPane().add("One", mainView);
-        getContentPane().add("Three", new PaymentView(this));
         getContentPane().add("four", new ReservationView(this));
         getContentPane().add("six", new WeekReport(this));
         setVisible(true);
@@ -43,10 +42,36 @@ public class MainFrame extends JFrame {
         this.getCardLayout().show(this.getContentPane(), "Two");
     }
 
-    public void returnTotal(int total) {
-        String originalText = mainView.buttons[selectedNumber-1].getText();
+    public void showPaymentView(int selectedNumber) {
+        this.selectedNumber = selectedNumber;
+        if (orders[selectedNumber - 1] == null)
+            orders[selectedNumber - 1] = new OrderView(this);
+        String originalText = mainView.buttons[selectedNumber - 1].getText();
         String[] strings = originalText.split(" ");
-        mainView.buttons[selectedNumber-1].setText(strings[0]+" "+strings[1]+ " "+ total + " 원");
+        int total = Integer.parseInt(strings[2]);
+
+        getContentPane().add("Three", new PaymentView(this, total));
+        this.getCardLayout().show(this.getContentPane(), "Three");
+    }
+
+    public void setTotal(int total) {
+        String originalText = mainView.buttons[selectedNumber - 1].getText();
+        String[] strings = originalText.split(" ");
+        mainView.buttons[selectedNumber - 1].setText(strings[0] + " " + strings[1] + " " + total + " 원");
+        this.getCardLayout().show(this.getContentPane(), "One");
+    }
+
+    public void clearTable(int change) {
+        String originalText = mainView.buttons[selectedNumber - 1].getText();
+        String[] strings = originalText.split(" ");
+
+        if (change > 0) {
+            mainView.buttons[selectedNumber - 1].setText(strings[0] + " " + strings[1]);
+            mainView.buttons[selectedNumber - 1] = null;
+            orders[selectedNumber - 1] = null;
+        } else if (change <= 0) {
+            mainView.buttons[selectedNumber - 1].setText(strings[0] + " " + strings[1] + " " + change * (-1) + " 원");
+        }
         this.getCardLayout().show(this.getContentPane(), "One");
 
     }

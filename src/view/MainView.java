@@ -1,11 +1,15 @@
 package view;
 
 import controller.TableSelector;
+import model.Time;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
 
 public class MainView extends JPanel {
     MainFrame F;
@@ -21,11 +25,11 @@ public class MainView extends JPanel {
 
         for (int i = 0; i <= 3; i++) {
             for (int j = 0; j <= 4; j++) {
-                buttons[tableNum-1]  = new JButton("테이블 " + tableNum);
-                buttons[tableNum-1] .setLocation(160 + (i * 154), 90 + (j * 92));
-                buttons[tableNum-1] .setSize(149, 87);
-                buttons[tableNum-1].addMouseListener(new TableSelector(this,buttons[tableNum-1]));
-                add(buttons[tableNum-1] );
+                buttons[tableNum - 1] = new JButton("테이블 " + tableNum);
+                buttons[tableNum - 1].setLocation(160 + (i * 154), 90 + (j * 92));
+                buttons[tableNum - 1].setSize(149, 87);
+                buttons[tableNum - 1].addMouseListener(new TableSelector(this, buttons[tableNum - 1]));
+                add(buttons[tableNum - 1]);
                 tableNum++;
             }
         }
@@ -36,11 +40,17 @@ public class MainView extends JPanel {
         TablePanel.setBorder(BorderFactory.createTitledBorder("테이블 정보"));
         add(TablePanel);
 
-        JLabel mainViews = new JLabel("Main View");
-        mainViews.setLocation(15, 30);
-        mainViews.setFont(new Font("Courier", Font.PLAIN, 40));
-        mainViews.setSize(700, 30);
-        add(mainViews);
+        JLabel timeLabel = new JLabel();
+        Time time = new Time(timeLabel);
+        javax.swing.SwingUtilities.invokeLater(new Runnable() {
+            public void run() {
+                time.createAndShowGUI();
+            }
+        });
+        timeLabel.setLocation(15, 30);
+        timeLabel.setFont(new Font("Courier", Font.PLAIN, 40));
+        timeLabel.setSize(700, 30);
+        add(timeLabel);
 
 
         // 왼쪽 버튼 모음
@@ -72,7 +82,7 @@ public class MainView extends JPanel {
         Settle.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 if (selectedNumber != -1) {
-                    F.getCardLayout().show(F.getContentPane(), "Three");
+                    F.showPaymentView(selectedNumber);
                     cancelIterator();
                 }
             }

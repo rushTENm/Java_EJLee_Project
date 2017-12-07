@@ -1381,7 +1381,7 @@ public class OrderView extends JPanel {
         btnOder.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 tablePrice.add(total);
-                F.returnTotal(total);
+                F.setTotal(total);
 //                F.getCardLayout().show(F.getContentPane(), "One");
             }
         });
