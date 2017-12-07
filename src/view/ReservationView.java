@@ -1,82 +1,118 @@
 package view;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
-
-import javax.swing.border.EmptyBorder;
-
 import java.awt.*;
 import java.awt.event.*;
+import java.io.*;
+import java.util.Vector;
 import javax.swing.*;
-import javax.swing.event.*;
 import javax.swing.border.LineBorder;
 import javax.swing.table.DefaultTableModel;
 
 public class ReservationView extends JPanel {
 
-    private JPanel contentPane;
     private JTable table;
-    private JTextField textField;
-    private JTextField textField_1;
-    private JTextField textField_2;
-    private JTextField textField_3;
-    private JLabel label;
-    private JLabel label_1;
-    private JLabel label_2;
-    private JLabel label_3;
-    MainFrame F;
+    private JTextField dateField;
+    private JTextField timeField;
+    private JTextField nameField;
+    private JTextField numField;
 
     public ReservationView(MainFrame f) {
-        setBounds(100, 100, 798, 602);
-
-        //setContentPane(contentPane);
+        setBounds(10, 10, 790, 590);
         setLayout(null);
-        F = f;
+
         String header[] = {"날짜", "시간", "이름", "인원"};
-        String contents[][] = {{"날짜", "시간", "이름", "인원"},
-                {"17-12-06", "17:00", "정호석", "4"}};
+        DefaultTableModel model = new DefaultTableModel(null, header);
 
-        DefaultTableModel model = new DefaultTableModel(contents, header);
+        try {
+            BufferedReader fr = new BufferedReader(new FileReader("Reservation.dat"));
+            while (true) {
+                String line = fr.readLine();
+                if (line == null)
+                    break;
+                String[] strings = line.split(" ");
+                model.addRow(strings);
+            }
+            fr.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
-        textField = new JTextField();
-        textField.setBounds(14, 392, 116, 24);
-        add(textField);
-        textField.setColumns(10);
+        JPanel panel = new JPanel();
+        panel.setBounds(14, 14, 772, 548);
+        panel.setBorder(BorderFactory.createTitledBorder("예약현황"));
+        add(panel);
+        panel.setLayout(null);
+        table = new JTable(model);
+        table.setBounds(14, 55, 747, 420);
+        panel.add(table);
+        table.setBorder(new LineBorder(new Color(0, 0, 0)));
+        table.setToolTipText("");
 
-        textField_1 = new JTextField();
-        textField_1.setColumns(10);
-        textField_1.setBounds(144, 392, 116, 24);
-        add(textField_1);
+        JLabel dateLabel = new JLabel("날짜");
+        dateLabel.setFont(new Font("Courier", Font.BOLD, 20));
+        dateLabel.setBounds(16, 26, 62, 20);
+        panel.add(dateLabel);
 
-        textField_2 = new JTextField();
-        textField_2.setColumns(10);
-        textField_2.setBounds(274, 392, 116, 24);
-        add(textField_2);
+        JLabel timeLabel = new JLabel("시간");
+        timeLabel.setFont(new Font("Courier", Font.BOLD, 20));
+        timeLabel.setBounds(203, 26, 62, 20);
+        panel.add(timeLabel);
 
-        textField_3 = new JTextField();
-        textField_3.setColumns(10);
-        textField_3.setBounds(404, 392, 116, 24);
-        add(textField_3);
+        JLabel nameLabel = new JLabel("이름");
+        nameLabel.setFont(new Font("Courier", Font.BOLD, 20));
+        nameLabel.setBounds(388, 26, 62, 20);
+        panel.add(nameLabel);
+
+        JLabel numLabel = new JLabel("인원");
+        numLabel.setFont(new Font("Courier", Font.BOLD, 20));
+        numLabel.setBounds(575, 26, 62, 20);
+        panel.add(numLabel);
+
+        dateField = new JTextField();
+        dateField.setBounds(14, 480, 186, 24);
+        panel.add(dateField);
+        //dateField.setColumns(10);
+
+        timeField = new JTextField();
+        timeField.setColumns(10);
+        timeField.setBounds(201, 480, 186, 24);
+        panel.add(timeField);
+
+        nameField = new JTextField();
+        nameField.setColumns(10);
+        nameField.setBounds(388, 480, 186, 24);
+        panel.add(nameField);
+
+        numField = new JTextField();
+        numField.setColumns(10);
+        numField.setBounds(575, 480, 186, 24);
+        panel.add(numField);
 
         JButton btnNewButton = new JButton("추가");
         btnNewButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent arg0) {
                 String inputStr[] = new String[4];
+                inputStr[0] = dateField.getText();
+                inputStr[1] = timeField.getText();
+                inputStr[2] = nameField.getText();
+                inputStr[3] = numField.getText();
 
-                inputStr[0] = textField.getText();
-                inputStr[1] = textField_1.getText();
-                inputStr[2] = textField_2.getText();
-                inputStr[3] = textField_3.getText();
-                model.addRow(inputStr);
+                if (inputStr[0].isEmpty() || inputStr[1].isEmpty() || inputStr[2].isEmpty() || inputStr[3].isEmpty()) {
+                    System.out.println("isEmpty");
+                } else {
+                    model.addRow(inputStr);
 
-                textField.setText("");
-                textField_1.setText("");
-                textField_2.setText("");
-                textField_3.setText("");
+                    dateField.setText("");
+                    timeField.setText("");
+                    nameField.setText("");
+                    numField.setText("");
+                }
             }
         });
-        btnNewButton.setBounds(534, 372, 105, 27);
-        add(btnNewButton);
+        btnNewButton.setBounds(655, 510, 105, 27);
+        panel.add(btnNewButton);
 
         JButton button = new JButton("삭제");
         button.addActionListener(new ActionListener() {
@@ -88,43 +124,35 @@ public class ReservationView extends JPanel {
                 }
             }
         });
-        button.setBounds(661, 372, 105, 27);
-        add(button);
+        button.setBounds(540, 510, 105, 27);
+        panel.add(button);
 
         JButton btnNewButton_1 = new JButton("확인");
         btnNewButton_1.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                F.getCardLayout().show(F.getContentPane(), "One");
+                try {
+                    // BufferedWriter 와 FileWriter를 조합
+                    BufferedWriter fw = new BufferedWriter(new FileWriter("Reservation.dat"));
+                    // 파일안에 문자열 쓰기
+                    for (Object object : model.getDataVector()) {
+                        Vector vector = (Vector) object;
+                        for (Object inner : vector) {
+                            fw.write(inner.toString());
+                            fw.write(" ");
+                        }
+                        fw.write("\n");
+                    }
+                    fw.flush();
+                    // 객체 닫기
+                    fw.close();
+                } catch (Exception exception) {
+                    exception.printStackTrace();
+                }
+
+                f.getCardLayout().show(f.getContentPane(), "One");
             }
         });
-        btnNewButton_1.setBounds(534, 415, 105, 27);
-        add(btnNewButton_1);
-
-        JPanel panel = new JPanel();
-        panel.setBounds(14, 25, 640, 336);
-        panel.setBorder(BorderFactory.createTitledBorder("예약현황"));
-        add(panel);
-        panel.setLayout(null);
-        table = new JTable(model);
-        table.setBounds(14, 25, 612, 299);
-        panel.add(table);
-        table.setBorder(new LineBorder(new Color(0, 0, 0)));
-        table.setToolTipText("");
-
-        label = new JLabel("날짜");
-        label.setBounds(57, 376, 62, 18);
-        add(label);
-
-        label_1 = new JLabel("시간");
-        label_1.setBounds(187, 376, 62, 18);
-        add(label_1);
-
-        label_2 = new JLabel("이름");
-        label_2.setBounds(316, 376, 62, 18);
-        add(label_2);
-
-        label_3 = new JLabel("인원");
-        label_3.setBounds(448, 376, 62, 18);
-        add(label_3);
+        btnNewButton_1.setBounds(14, 510, 105, 27);
+        panel.add(btnNewButton_1);
     }
 }
