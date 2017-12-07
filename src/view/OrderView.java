@@ -23,9 +23,7 @@ public class OrderView extends JPanel {
     String n;
 
     static HashMap<String, Integer> menuMap = new HashMap<>();
-    private JTextField textField_1;
-    private JTextField textField_2;
-    private JTextField textField_3;
+    public JTextField totalTextField;
 
     public OrderView(MainFrame f) {
         total = 0;
@@ -60,7 +58,7 @@ public class OrderView extends JPanel {
                 list.setModel(listModel);
                 OrderList.add("원조김밥/1500원");
                 total = 1500 + total;
-                textField_1.setText(String.valueOf(total));
+                totalTextField.setText(String.valueOf(total));
             }
         });
         btnGB_1.setBackground(Color.WHITE);
@@ -75,7 +73,7 @@ public class OrderView extends JPanel {
                 list.setModel(listModel);
                 OrderList.add("김치김밥/2500원");
                 total = 2500 + total;
-                textField_1.setText(String.valueOf(total));
+                totalTextField.setText(String.valueOf(total));
             }
         });
         btnGB_2.setBounds(152, 12, 130, 27);
@@ -89,7 +87,7 @@ public class OrderView extends JPanel {
                 list.setModel(listModel);
                 OrderList.add("참치김밥/2500원");
                 total = 2500 + total;
-                textField_1.setText(String.valueOf(total));
+                totalTextField.setText(String.valueOf(total));
             }
         });
         btnGB_3.setBounds(290, 12, 130, 27);
@@ -103,7 +101,7 @@ public class OrderView extends JPanel {
                 list.setModel(listModel);
                 OrderList.add("치즈김밥/2500원");
                 total = 2500 + total;
-                textField_1.setText(String.valueOf(total));
+                totalTextField.setText(String.valueOf(total));
             }
         });
         btnGB_4.setBounds(14, 51, 130, 27);
@@ -116,7 +114,7 @@ public class OrderView extends JPanel {
                 list.setModel(listModel);
                 OrderList.add("계란말이김밥/3000원");
                 total = 3000 + total;
-                textField_1.setText(String.valueOf(total));
+                totalTextField.setText(String.valueOf(total));
             }
         });
         btnGB_5.setBounds(152, 51, 130, 27);
@@ -130,7 +128,7 @@ public class OrderView extends JPanel {
                 list.setModel(listModel);
                 OrderList.add("소고기김밥/3000원");
                 total = 3000 + total;
-                textField_1.setText(String.valueOf(total));
+                totalTextField.setText(String.valueOf(total));
             }
         });
         btnGB_6.setBounds(290, 51, 130, 27);
@@ -144,7 +142,7 @@ public class OrderView extends JPanel {
                 list.setModel(listModel);
                 OrderList.add("고추김밥/2500원");
                 total = 2500 + total;
-                textField_1.setText(String.valueOf(total));
+                totalTextField.setText(String.valueOf(total));
             }
         });
         btnGB_7.setBounds(14, 90, 130, 27);
@@ -158,7 +156,7 @@ public class OrderView extends JPanel {
                 list.setModel(listModel);
                 OrderList.add("샐러드김밥/2500원");
                 total = 2500 + total;
-                textField_1.setText(String.valueOf(total));
+                totalTextField.setText(String.valueOf(total));
             }
         });
         btnGB_8.setBounds(152, 90, 130, 27);
@@ -172,7 +170,7 @@ public class OrderView extends JPanel {
                 list.setModel(listModel);
                 OrderList.add("모듬김밥/4000원");
                 total = 4000 + total;
-                textField_1.setText(String.valueOf(total));
+                totalTextField.setText(String.valueOf(total));
             }
         });
         btnGB_9.setBounds(290, 90, 130, 27);
@@ -190,7 +188,7 @@ public class OrderView extends JPanel {
                 list.setModel(listModel);
                 OrderList.add("물냉면/5000원");
                 total = 5000 + total;
-                textField_1.setText(String.valueOf(total));
+                totalTextField.setText(String.valueOf(total));
             }
         });
         btnSeason_1.setBounds(14, 12, 130, 27);
@@ -204,7 +202,7 @@ public class OrderView extends JPanel {
                 list.setModel(listModel);
                 OrderList.add("콩국수/5000원");
                 total = 5000 + total;
-                textField_1.setText(String.valueOf(total));
+                totalTextField.setText(String.valueOf(total));
             }
         });
         btnSeason_2.setBounds(150, 12, 130, 27);
@@ -218,7 +216,7 @@ public class OrderView extends JPanel {
                 list.setModel(listModel);
                 OrderList.add("비빔냉면/5000원");
                 total = 5000 + total;
-                textField_1.setText(String.valueOf(total));
+                totalTextField.setText(String.valueOf(total));
             }
         });
         btnSeason_3.setBounds(290, 12, 130, 27);
@@ -232,7 +230,7 @@ public class OrderView extends JPanel {
                 list.setModel(listModel);
                 OrderList.add("냉모밀/5000원");
                 total = 5000 + total;
-                textField_1.setText(String.valueOf(total));
+                totalTextField.setText(String.valueOf(total));
             }
         });
         btnSeason_4.setBounds(14, 51, 130, 27);
@@ -250,7 +248,7 @@ public class OrderView extends JPanel {
                 list.setModel(listModel);
                 OrderList.add("냉모밀/2500원");
                 total = 2500 + total;
-                textField_1.setText(String.valueOf(total));
+                totalTextField.setText(String.valueOf(total));
             }
         });
         btnNoodle_1.setBounds(14, 12, 130, 27);
@@ -264,7 +262,7 @@ public class OrderView extends JPanel {
                 list.setModel(listModel);
                 OrderList.add("김치라면/3000원");
                 total = 3000 + total;
-                textField_1.setText(String.valueOf(total));
+                totalTextField.setText(String.valueOf(total));
             }
         });
 
@@ -279,7 +277,7 @@ public class OrderView extends JPanel {
                 list.setModel(listModel);
                 OrderList.add("떡라면/3000원");
                 total = 3000 + total;
-                textField_1.setText(String.valueOf(total));
+                totalTextField.setText(String.valueOf(total));
             }
         });
 
@@ -294,7 +292,7 @@ public class OrderView extends JPanel {
                 list.setModel(listModel);
                 OrderList.add("만두라면/3000원");
                 total = 3000 + total;
-                textField_1.setText(String.valueOf(total));
+                totalTextField.setText(String.valueOf(total));
             }
         });
 
@@ -309,7 +307,7 @@ public class OrderView extends JPanel {
                 list.setModel(listModel);
                 OrderList.add("치즈라면/3000원");
                 total = 3000 + total;
-                textField_1.setText(String.valueOf(total));
+                totalTextField.setText(String.valueOf(total));
             }
         });
 
@@ -324,7 +322,7 @@ public class OrderView extends JPanel {
                 list.setModel(listModel);
                 OrderList.add("콩나물라면/3000원");
                 total = 3000 + total;
-                textField_1.setText(String.valueOf(total));
+                totalTextField.setText(String.valueOf(total));
             }
         });
 
@@ -339,7 +337,7 @@ public class OrderView extends JPanel {
                 list.setModel(listModel);
                 OrderList.add("수제비라면/4000원");
                 total = 4000 + total;
-                textField_1.setText(String.valueOf(total));
+                totalTextField.setText(String.valueOf(total));
             }
         });
 
@@ -354,7 +352,7 @@ public class OrderView extends JPanel {
                 list.setModel(listModel);
                 OrderList.add("짬뽕라면/4000원");
                 total = 4000 + total;
-                textField_1.setText(String.valueOf(total));
+                totalTextField.setText(String.valueOf(total));
             }
         });
 
@@ -369,7 +367,7 @@ public class OrderView extends JPanel {
                 list.setModel(listModel);
                 OrderList.add("우동/3500원");
                 total = 3500 + total;
-                textField_1.setText(String.valueOf(total));
+                totalTextField.setText(String.valueOf(total));
             }
         });
 
@@ -384,7 +382,7 @@ public class OrderView extends JPanel {
                 list.setModel(listModel);
                 OrderList.add("잔치국수/4000원");
                 total = 4000 + total;
-                textField_1.setText(String.valueOf(total));
+                totalTextField.setText(String.valueOf(total));
             }
         });
 
@@ -399,7 +397,7 @@ public class OrderView extends JPanel {
                 list.setModel(listModel);
                 OrderList.add("비빔국수/4500원");
                 total = 4500 + total;
-                textField_1.setText(String.valueOf(total));
+                totalTextField.setText(String.valueOf(total));
             }
         });
 
@@ -414,7 +412,7 @@ public class OrderView extends JPanel {
                 list.setModel(listModel);
                 OrderList.add("손수제비/4500원");
                 total = 4500 + total;
-                textField_1.setText(String.valueOf(total));
+                totalTextField.setText(String.valueOf(total));
             }
         });
 
@@ -429,7 +427,7 @@ public class OrderView extends JPanel {
                 list.setModel(listModel);
                 OrderList.add("김치수제비/4500원");
                 total = 4500 + total;
-                textField_1.setText(String.valueOf(total));
+                totalTextField.setText(String.valueOf(total));
             }
         });
 
@@ -444,7 +442,7 @@ public class OrderView extends JPanel {
                 list.setModel(listModel);
                 OrderList.add("칼국수/4500원");
                 total = 4500 + total;
-                textField_1.setText(String.valueOf(total));
+                totalTextField.setText(String.valueOf(total));
             }
         });
 
@@ -459,7 +457,7 @@ public class OrderView extends JPanel {
                 list.setModel(listModel);
                 OrderList.add("쫄면/4000원");
                 total = 4000 + total;
-                textField_1.setText(String.valueOf(total));
+                totalTextField.setText(String.valueOf(total));
             }
         });
 
@@ -479,7 +477,7 @@ public class OrderView extends JPanel {
                 list.setModel(listModel);
                 OrderList.add("떡볶이/2500원");
                 total = 2500 + total;
-                textField_1.setText(String.valueOf(total));
+                totalTextField.setText(String.valueOf(total));
             }
         });
 
@@ -494,7 +492,7 @@ public class OrderView extends JPanel {
                 list.setModel(listModel);
                 OrderList.add("치즈떡볶이/3000원");
                 total = 3000 + total;
-                textField_1.setText(String.valueOf(total));
+                totalTextField.setText(String.valueOf(total));
             }
         });
 
@@ -509,7 +507,7 @@ public class OrderView extends JPanel {
                 list.setModel(listModel);
                 OrderList.add("라볶이/3000원");
                 total = 3000 + total;
-                textField_1.setText(String.valueOf(total));
+                totalTextField.setText(String.valueOf(total));
             }
         });
 
@@ -524,7 +522,7 @@ public class OrderView extends JPanel {
                 list.setModel(listModel);
                 OrderList.add("치즈라볶이/3500원");
                 total = 3500 + total;
-                textField_1.setText(String.valueOf(total));
+                totalTextField.setText(String.valueOf(total));
             }
         });
 
@@ -539,7 +537,7 @@ public class OrderView extends JPanel {
                 list.setModel(listModel);
                 OrderList.add("쫄떡볶이/4000원");
                 total = 4000 + total;
-                textField_1.setText(String.valueOf(total));
+                totalTextField.setText(String.valueOf(total));
             }
         });
 
@@ -554,7 +552,7 @@ public class OrderView extends JPanel {
                 list.setModel(listModel);
                 OrderList.add("떡국/44500원");
                 total = 2500 + total;
-                textField_1.setText(String.valueOf(total));
+                totalTextField.setText(String.valueOf(total));
             }
         });
 
@@ -569,7 +567,7 @@ public class OrderView extends JPanel {
                 list.setModel(listModel);
                 OrderList.add("만두국/4500원");
                 total = 4500 + total;
-                textField_1.setText(String.valueOf(total));
+                totalTextField.setText(String.valueOf(total));
             }
         });
 
@@ -584,7 +582,7 @@ public class OrderView extends JPanel {
                 list.setModel(listModel);
                 OrderList.add("떡만두국/5000원");
                 total = 5000 + total;
-                textField_1.setText(String.valueOf(total));
+                totalTextField.setText(String.valueOf(total));
             }
         });
 
@@ -599,7 +597,7 @@ public class OrderView extends JPanel {
                 list.setModel(listModel);
                 OrderList.add("고기만두/3000원");
                 total = 3000 + total;
-                textField_1.setText(String.valueOf(total));
+                totalTextField.setText(String.valueOf(total));
             }
         });
 
@@ -614,7 +612,7 @@ public class OrderView extends JPanel {
                 list.setModel(listModel);
                 OrderList.add("김치만두/3000원");
                 total = 3000 + total;
-                textField_1.setText(String.valueOf(total));
+                totalTextField.setText(String.valueOf(total));
             }
         });
 
@@ -629,7 +627,7 @@ public class OrderView extends JPanel {
                 list.setModel(listModel);
                 OrderList.add("물만두/3000원");
                 total = 3000 + total;
-                textField_1.setText(String.valueOf(total));
+                totalTextField.setText(String.valueOf(total));
             }
         });
 
@@ -644,7 +642,7 @@ public class OrderView extends JPanel {
                 list.setModel(listModel);
                 OrderList.add("군만두/3000원");
                 total = 3000 + total;
-                textField_1.setText(String.valueOf(total));
+                totalTextField.setText(String.valueOf(total));
             }
         });
 
@@ -659,7 +657,7 @@ public class OrderView extends JPanel {
                 list.setModel(listModel);
                 OrderList.add("오뎅/2500원");
                 total = 2500 + total;
-                textField_1.setText(String.valueOf(total));
+                totalTextField.setText(String.valueOf(total));
             }
         });
 
@@ -679,7 +677,7 @@ public class OrderView extends JPanel {
                 list.setModel(listModel);
                 OrderList.add("제육덮밥/4500원");
                 total = 4500 + total;
-                textField_1.setText(String.valueOf(total));
+                totalTextField.setText(String.valueOf(total));
             }
         });
 
@@ -694,7 +692,7 @@ public class OrderView extends JPanel {
                 list.setModel(listModel);
                 OrderList.add("오징어덮밥/4500원");
                 total = 2500 + total;
-                textField_1.setText(String.valueOf(total));
+                totalTextField.setText(String.valueOf(total));
             }
         });
 
@@ -709,7 +707,7 @@ public class OrderView extends JPanel {
                 list.setModel(listModel);
                 OrderList.add("김치덮밥/4500원");
                 total = 4500 + total;
-                textField_1.setText(String.valueOf(total));
+                totalTextField.setText(String.valueOf(total));
             }
         });
 
@@ -724,7 +722,7 @@ public class OrderView extends JPanel {
                 list.setModel(listModel);
                 OrderList.add("참치김치덮밥/5000원");
                 total = 5000 + total;
-                textField_1.setText(String.valueOf(total));
+                totalTextField.setText(String.valueOf(total));
             }
         });
 
@@ -739,7 +737,7 @@ public class OrderView extends JPanel {
                 list.setModel(listModel);
                 OrderList.add("소고기덮밥/5000원");
                 total = 5000 + total;
-                textField_1.setText(String.valueOf(total));
+                totalTextField.setText(String.valueOf(total));
             }
         });
 
@@ -754,7 +752,7 @@ public class OrderView extends JPanel {
                 list.setModel(listModel);
                 OrderList.add("짜장덮밥/5000원");
                 total = 5000 + total;
-                textField_1.setText(String.valueOf(total));
+                totalTextField.setText(String.valueOf(total));
             }
         });
 
@@ -769,7 +767,7 @@ public class OrderView extends JPanel {
                 list.setModel(listModel);
                 OrderList.add("낙지덮밥/5500원");
                 total = 5500 + total;
-                textField_1.setText(String.valueOf(total));
+                totalTextField.setText(String.valueOf(total));
             }
         });
 
@@ -784,7 +782,7 @@ public class OrderView extends JPanel {
                 list.setModel(listModel);
                 OrderList.add("야채볶음밥/4500원");
                 total = 4500 + total;
-                textField_1.setText(String.valueOf(total));
+                totalTextField.setText(String.valueOf(total));
             }
         });
 
@@ -799,7 +797,7 @@ public class OrderView extends JPanel {
                 list.setModel(listModel);
                 OrderList.add("김치볶음밥/4500원");
                 total = 4500 + total;
-                textField_1.setText(String.valueOf(total));
+                totalTextField.setText(String.valueOf(total));
             }
         });
 
@@ -814,7 +812,7 @@ public class OrderView extends JPanel {
                 list.setModel(listModel);
                 OrderList.add("낙지볶음밥/5000원");
                 total = 5000 + total;
-                textField_1.setText(String.valueOf(total));
+                totalTextField.setText(String.valueOf(total));
             }
         });
 
@@ -829,7 +827,7 @@ public class OrderView extends JPanel {
                 list.setModel(listModel);
                 OrderList.add("참치김치볶음밥/5000원");
                 total = 5000 + total;
-                textField_1.setText(String.valueOf(total));
+                totalTextField.setText(String.valueOf(total));
             }
         });
 
@@ -844,7 +842,7 @@ public class OrderView extends JPanel {
                 list.setModel(listModel);
                 OrderList.add("새우볶음밥/5000원");
                 total = 5000 + total;
-                textField_1.setText(String.valueOf(total));
+                totalTextField.setText(String.valueOf(total));
             }
         });
 
@@ -859,7 +857,7 @@ public class OrderView extends JPanel {
                 list.setModel(listModel);
                 OrderList.add("소고기볶음밥/5000원");
                 total = 5000 + total;
-                textField_1.setText(String.valueOf(total));
+                totalTextField.setText(String.valueOf(total));
             }
         });
 
@@ -874,7 +872,7 @@ public class OrderView extends JPanel {
                 list.setModel(listModel);
                 OrderList.add("해물볶음밥/5000원");
                 total = 5000 + total;
-                textField_1.setText(String.valueOf(total));
+                totalTextField.setText(String.valueOf(total));
             }
         });
 
@@ -889,7 +887,7 @@ public class OrderView extends JPanel {
                 list.setModel(listModel);
                 OrderList.add("오므라이스/4500원");
                 total = 4500 + total;
-                textField_1.setText(String.valueOf(total));
+                totalTextField.setText(String.valueOf(total));
             }
         });
 
@@ -904,7 +902,7 @@ public class OrderView extends JPanel {
                 list.setModel(listModel);
                 OrderList.add("카레라이스/4500원");
                 total = 4500 + total;
-                textField_1.setText(String.valueOf(total));
+                totalTextField.setText(String.valueOf(total));
             }
         });
 
@@ -919,7 +917,7 @@ public class OrderView extends JPanel {
                 list.setModel(listModel);
                 OrderList.add("참치오므라이스/5000원");
                 total = 5000 + total;
-                textField_1.setText(String.valueOf(total));
+                totalTextField.setText(String.valueOf(total));
             }
         });
 
@@ -934,7 +932,7 @@ public class OrderView extends JPanel {
                 list.setModel(listModel);
                 OrderList.add("돈까스오므라이스/6000원");
                 total = 6000 + total;
-                textField_1.setText(String.valueOf(total));
+                totalTextField.setText(String.valueOf(total));
             }
         });
 
@@ -953,7 +951,7 @@ public class OrderView extends JPanel {
                 list.setModel(listModel);
                 OrderList.add("된장찌개/4500원");
                 total = 4500 + total;
-                textField_1.setText(String.valueOf(total));
+                totalTextField.setText(String.valueOf(total));
             }
         });
 
@@ -968,7 +966,7 @@ public class OrderView extends JPanel {
                 list.setModel(listModel);
                 OrderList.add("순두부찌개/4500원");
                 total = 4500 + total;
-                textField_1.setText(String.valueOf(total));
+                totalTextField.setText(String.valueOf(total));
             }
         });
 
@@ -983,7 +981,7 @@ public class OrderView extends JPanel {
                 list.setModel(listModel);
                 OrderList.add("김치찌개/4500원");
                 total = 4500 + total;
-                textField_1.setText(String.valueOf(total));
+                totalTextField.setText(String.valueOf(total));
             }
         });
 
@@ -998,7 +996,7 @@ public class OrderView extends JPanel {
                 list.setModel(listModel);
                 OrderList.add("참치김치찌개/5000원");
                 total = 5000 + total;
-                textField_1.setText(String.valueOf(total));
+                totalTextField.setText(String.valueOf(total));
             }
         });
 
@@ -1013,7 +1011,7 @@ public class OrderView extends JPanel {
                 list.setModel(listModel);
                 OrderList.add("부대찌개/6000원");
                 total = 6000 + total;
-                textField_1.setText(String.valueOf(total));
+                totalTextField.setText(String.valueOf(total));
             }
         });
 
@@ -1028,7 +1026,7 @@ public class OrderView extends JPanel {
                 list.setModel(listModel);
                 OrderList.add("고등어김치조림/5000원");
                 total = 5000 + total;
-                textField_1.setText(String.valueOf(total));
+                totalTextField.setText(String.valueOf(total));
             }
         });
 
@@ -1043,7 +1041,7 @@ public class OrderView extends JPanel {
                 list.setModel(listModel);
                 OrderList.add("올갱이해장국/5000원");
                 total = 5000 + total;
-                textField_1.setText(String.valueOf(total));
+                totalTextField.setText(String.valueOf(total));
             }
         });
 
@@ -1058,7 +1056,7 @@ public class OrderView extends JPanel {
                 list.setModel(listModel);
                 OrderList.add("육개장/5000원");
                 total = 5000 + total;
-                textField_1.setText(String.valueOf(total));
+                totalTextField.setText(String.valueOf(total));
             }
         });
 
@@ -1073,7 +1071,7 @@ public class OrderView extends JPanel {
                 list.setModel(listModel);
                 OrderList.add("갈비탕/5000원");
                 total = 5000 + total;
-                textField_1.setText(String.valueOf(total));
+                totalTextField.setText(String.valueOf(total));
             }
         });
 
@@ -1088,7 +1086,7 @@ public class OrderView extends JPanel {
                 list.setModel(listModel);
                 OrderList.add("황태해장국/5500원");
                 total = 5500 + total;
-                textField_1.setText(String.valueOf(total));
+                totalTextField.setText(String.valueOf(total));
             }
         });
 
@@ -1103,7 +1101,7 @@ public class OrderView extends JPanel {
                 list.setModel(listModel);
                 OrderList.add("뚝배기불고기/5000원");
                 total = 5000 + total;
-                textField_1.setText(String.valueOf(total));
+                totalTextField.setText(String.valueOf(total));
             }
         });
 
@@ -1118,7 +1116,7 @@ public class OrderView extends JPanel {
                 list.setModel(listModel);
                 OrderList.add("공기밥/1000원");
                 total = 1000 + total;
-                textField_1.setText(String.valueOf(total));
+                totalTextField.setText(String.valueOf(total));
             }
         });
 
@@ -1137,7 +1135,7 @@ public class OrderView extends JPanel {
                 list.setModel(listModel);
                 OrderList.add("호박죽/4500원");
                 total = 4500 + total;
-                textField_1.setText(String.valueOf(total));
+                totalTextField.setText(String.valueOf(total));
             }
         });
 
@@ -1152,7 +1150,7 @@ public class OrderView extends JPanel {
                 list.setModel(listModel);
                 OrderList.add("단팥죽/4500원");
                 total = 4500 + total;
-                textField_1.setText(String.valueOf(total));
+                totalTextField.setText(String.valueOf(total));
             }
         });
 
@@ -1167,7 +1165,7 @@ public class OrderView extends JPanel {
                 list.setModel(listModel);
                 OrderList.add("된장찌개/5000원");
                 total = 5000 + total;
-                textField_1.setText(String.valueOf(total));
+                totalTextField.setText(String.valueOf(total));
             }
         });
 
@@ -1182,7 +1180,7 @@ public class OrderView extends JPanel {
                 list.setModel(listModel);
                 OrderList.add("전복죽/6500원");
                 total = 6500 + total;
-                textField_1.setText(String.valueOf(total));
+                totalTextField.setText(String.valueOf(total));
             }
         });
 
@@ -1201,7 +1199,7 @@ public class OrderView extends JPanel {
                 list.setModel(listModel);
                 OrderList.add("비빔밥/4500원");
                 total = 4500 + total;
-                textField_1.setText(String.valueOf(total));
+                totalTextField.setText(String.valueOf(total));
             }
         });
 
@@ -1216,7 +1214,7 @@ public class OrderView extends JPanel {
                 list.setModel(listModel);
                 OrderList.add("돌솦비빔밥/5000원");
                 total = 5000 + total;
-                textField_1.setText(String.valueOf(total));
+                totalTextField.setText(String.valueOf(total));
             }
         });
 
@@ -1231,7 +1229,7 @@ public class OrderView extends JPanel {
                 list.setModel(listModel);
                 OrderList.add("돌솥알밥/5500원");
                 total = 5500 + total;
-                textField_1.setText(String.valueOf(total));
+                totalTextField.setText(String.valueOf(total));
             }
         });
 
@@ -1246,7 +1244,7 @@ public class OrderView extends JPanel {
                 list.setModel(listModel);
                 OrderList.add("양푼이비빔밥/10000원");
                 total = 10000 + total;
-                textField_1.setText(String.valueOf(total));
+                totalTextField.setText(String.valueOf(total));
             }
         });
 
@@ -1261,7 +1259,7 @@ public class OrderView extends JPanel {
                 list.setModel(listModel);
                 OrderList.add("잡채밥/4500원");
                 total = 4500 + total;
-                textField_1.setText(String.valueOf(total));
+                totalTextField.setText(String.valueOf(total));
             }
         });
 
@@ -1280,7 +1278,7 @@ public class OrderView extends JPanel {
                 list.setModel(listModel);
                 OrderList.add("돈까스/5000원");
                 total = 5000 + total;
-                textField_1.setText(String.valueOf(total));
+                totalTextField.setText(String.valueOf(total));
             }
         });
 
@@ -1295,7 +1293,7 @@ public class OrderView extends JPanel {
                 list.setModel(listModel);
                 OrderList.add("치즈돈까스/6000원");
                 total = 4500 + total;
-                textField_1.setText(String.valueOf(total));
+                totalTextField.setText(String.valueOf(total));
             }
         });
 
@@ -1310,7 +1308,7 @@ public class OrderView extends JPanel {
                 list.setModel(listModel);
                 OrderList.add("카레돈까스/6000원");
                 total = 6000 + total;
-                textField_1.setText(String.valueOf(total));
+                totalTextField.setText(String.valueOf(total));
             }
         });
 
@@ -1325,7 +1323,7 @@ public class OrderView extends JPanel {
                 list.setModel(listModel);
                 OrderList.add("고구마돈까스/6000원");
                 total = 6000 + total;
-                textField_1.setText(String.valueOf(total));
+                totalTextField.setText(String.valueOf(total));
             }
         });
 
@@ -1340,7 +1338,7 @@ public class OrderView extends JPanel {
                 list.setModel(listModel);
                 OrderList.add("비빔밥/7000원");
                 total = 7000 + total;
-                textField_1.setText(String.valueOf(total));
+                totalTextField.setText(String.valueOf(total));
             }
         });
 
@@ -1355,7 +1353,7 @@ public class OrderView extends JPanel {
                 list.setModel(listModel);
                 OrderList.add("스페셜정식/7000원");
                 total = 7000 + total;
-                textField_1.setText(String.valueOf(total));
+                totalTextField.setText(String.valueOf(total));
             }
         });
 
@@ -1366,11 +1364,11 @@ public class OrderView extends JPanel {
         label.setBounds(14, 359, 62, 18);
         add(label);
 
-        textField_1 = new JTextField();
-        textField_1.setText("0");
-        textField_1.setBounds(107, 356, 116, 24);
-        add(textField_1);
-        textField_1.setColumns(10);
+        totalTextField = new JTextField();
+        totalTextField.setText("0");
+        totalTextField.setBounds(107, 356, 116, 24);
+        add(totalTextField);
+        totalTextField.setColumns(10);
 
         JLabel lblNewLabel = new JLabel("원");
         lblNewLabel.setBounds(226, 359, 62, 18);
@@ -1382,7 +1380,6 @@ public class OrderView extends JPanel {
             public void actionPerformed(ActionEvent e) {
                 tablePrice.add(total);
                 F.setTotal(total);
-//                F.getCardLayout().show(F.getContentPane(), "One");
             }
         });
         btnOder.setBounds(10, 430, 100, 46);
@@ -1400,11 +1397,9 @@ public class OrderView extends JPanel {
             public void actionPerformed(ActionEvent arg0) {
                 listModel.clear();
                 total = 0;
-                textField_1.setText("0");
+                totalTextField.setText("0");
                 n = null;
                 sList.clear();
-                textField_2.setText("0");
-                textField_3.setText("0");
                 temp = 0;
             }
         });
@@ -1446,10 +1441,7 @@ public class OrderView extends JPanel {
             for (String d : sList)
                 n = n + d;
             n = n.substring(4);
-            textField_2.setText(n);
             temp = Integer.parseInt(n);
-
-
         }
     }
 }

@@ -13,9 +13,9 @@ public class Table {
     public void printOrdered() {
         if (!orderedMenu.isEmpty()) {
             for (MenuEnum ordered : orderedMenu) {
-                System.out.print(ordered.getName()+" ");
+                System.out.print(ordered.getName() + " ");
             }
-            System.out.println("\n"+total +"원 주문되었습니다.");
+            System.out.println("\n" + total + "원 주문되었습니다.");
         } else
             System.out.println("주문된 메뉴가 없습니다.");
     }
@@ -24,7 +24,7 @@ public class Table {
         System.out.print("주문할 메뉴를 입력해주세요 : ");
         String input = scanner.nextLine();
         String[] inputs = input.split(" ");
-        for (String menuStr: inputs ) {
+        for (String menuStr : inputs) {
             orderedMenu.add(MenuEnum.valueOf(menuStr));
             total += MenuEnum.valueOf(menuStr).getPrice();
         }
@@ -43,16 +43,16 @@ public class Table {
                 System.out.print("결제 금액을 입력해주세요 : ");
                 total -= Integer.parseInt(scanner.next());
 
-                if (total>0) {
+                if (total > 0) {
                     System.out.print("추가 결제를 진행하시겠습니까?[Y,N] : ");
-                    if (scanner.nextLine().equals("Y")||scanner.nextLine().equals("y"))
+                    if (scanner.nextLine().equals("Y") || scanner.nextLine().equals("y"))
                         pay();
                     else
                         System.out.println(total + "원 남았습니다.");
                 } else if (total == 0) {
                     System.out.println("결제가 정상적으로 진행되었습니다.");
                 } else if (total < 0) {
-                    System.out.println("거스름돈은 "+total*(-1)+"원입니다.");
+                    System.out.println("거스름돈은 " + total * (-1) + "원입니다.");
                 }
                 break;
         }

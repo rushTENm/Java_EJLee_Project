@@ -15,7 +15,6 @@ public class MainView extends JPanel {
     MainFrame F;
     public int selectedNumber = -1;
     public JButton buttons[] = new JButton[20];
-    OrderView orders[] = new OrderView[20];
 
     public MainView(MainFrame f) {
         int tableNum = 1;

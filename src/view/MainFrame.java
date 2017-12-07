@@ -1,11 +1,8 @@
 package view;
 
 import java.awt.*;
-import java.awt.event.*;
-import java.util.ArrayList;
 
 import javax.swing.*;
-import javax.swing.event.*;
 
 public class MainFrame extends JFrame {
     private CardLayout cards = new CardLayout();
@@ -22,7 +19,7 @@ public class MainFrame extends JFrame {
         setSize(800, 600);
         getContentPane().setLayout(cards);
         setResizable(false);
-
+        setTitle("Point of Sale");
         getContentPane().add("One", mainView);
         getContentPane().add("four", new ReservationView(this));
         getContentPane().add("six", new WeekReport(this));
@@ -39,6 +36,11 @@ public class MainFrame extends JFrame {
             orders[selectedNumber - 1] = new OrderView(this);
         getContentPane().add("Two", orders[selectedNumber - 1]);
 
+        String[] strings = mainView.buttons[selectedNumber - 1].getText().split(" ");
+        if (strings.length > 2) {
+            orders[selectedNumber - 1].totalTextField.setText(strings[2]);
+            orders[selectedNumber - 1].total = Integer.parseInt(strings[2]);
+        }
         this.getCardLayout().show(this.getContentPane(), "Two");
     }
 
@@ -65,11 +67,10 @@ public class MainFrame extends JFrame {
         String originalText = mainView.buttons[selectedNumber - 1].getText();
         String[] strings = originalText.split(" ");
 
-        if (change > 0) {
+        if (change >= 0) {
             mainView.buttons[selectedNumber - 1].setText(strings[0] + " " + strings[1]);
-            mainView.buttons[selectedNumber - 1] = null;
             orders[selectedNumber - 1] = null;
-        } else if (change <= 0) {
+        } else if (change < 0) {
             mainView.buttons[selectedNumber - 1].setText(strings[0] + " " + strings[1] + " " + change * (-1) + " 원");
         }
         this.getCardLayout().show(this.getContentPane(), "One");

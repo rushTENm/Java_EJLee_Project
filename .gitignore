@@ -72,5 +72,4 @@ local.properties
 hs_err_pid*
 /bin/
 .idea/workspace.xml
-.idea/workspace.xml
 .project

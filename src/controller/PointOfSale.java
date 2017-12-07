@@ -10,7 +10,7 @@ public class PointOfSale {
 
         while (true) {
             System.out.print("테이블 번호를 입력해주세요. : ");
-            int selectedNumber = Integer.parseInt(scanner.next())-1;
+            int selectedNumber = Integer.parseInt(scanner.next()) - 1;
             if (tables[selectedNumber] == null)
                 tables[selectedNumber] = new Table();
 
@@ -26,7 +26,7 @@ public class PointOfSale {
                     tables[selectedNumber].printOrdered();
                     break;
                 case 3:
-                    if (tables[selectedNumber].pay()<=0) {
+                    if (tables[selectedNumber].pay() <= 0) {
                         tables[selectedNumber] = null;
                     }
                     break;

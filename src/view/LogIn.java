@@ -97,7 +97,7 @@ public class LogIn extends JFrame {
                 setVisible(false);
             }
         } else {
-            JOptionPane.showMessageDialog(null, "Faild");
+            JOptionPane.showMessageDialog(null, "Failed");
         }
     }
 
